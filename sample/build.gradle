@@ -7,7 +7,7 @@ android {
     buildToolsVersion buildToolsVersions
 
     defaultConfig {
-        applicationId "com.iamkamrul.expandablerecyclerviewlist"
+        applicationId "com.iamkamrul.expandablerecyclerviewlistsample"
         minSdkVersion minSdkVersions
         targetSdkVersion targetSdkVersions
         versionCode versionCodes
@@ -33,4 +33,5 @@ dependencies {
     implementation libraries.recyclerView
     implementation libraries.cardView
     implementation libraries.constraintlayout
+    implementation project(':expandablerecyclerviewlist')
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ExpandableRecyclerviewList</string>
+    <string name="price">$100</string>
 </resources>
