@@ -17,7 +17,7 @@ Step 2. Add the dependency
 --------------------------
 ```
 dependencies {
-  implementation 'com.github.kamrul3288:Expandable-Recyclerview-List-Android:1.0.0'
+  implementation 'com.github.kamrul3288:Expandable-Recyclerview-List-Android:1.0.1'
 }
 ```
 Usage
@@ -71,7 +71,7 @@ class CategoryListViewHolder(view:View) : ChildViewHolder(view){
 ```
 Third create  custom `Adapter` class:
 ```kotlin
-class CategoryAdapter(parentListItem: List<ParentListItem>) : ExpandableRecyclerAdapter<CategoryViewHolder, CategoryListViewHolder>(parentListItem) {
+class CategoryAdapter : ExpandableRecyclerAdapter<CategoryViewHolder, CategoryListViewHolder>(){
 
     override fun onCreateParentViewHolder(parentViewGroup: ViewGroup
     ): CategoryViewHolder {
@@ -97,15 +97,17 @@ class CategoryAdapter(parentListItem: List<ParentListItem>) : ExpandableRecycler
 ```
 Lastly you'll need either an Activity or Fragment to host your adapter
 ```kotlin
- override fun onCreate(savedInstanceState: Bundle?) {
+  private val adapter = CategoryAdapter()
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val adapter = CategoryAdapter(listOf(
+        val data = listOf(
             Category("Action", listOf(CategoryList("My Spy"),CategoryList("BloodShot"),CategoryList("Midway"))),
             Category("Drama", listOf(CategoryList("The Godfather"),CategoryList("The Dark Knight"))),
             Category("War", listOf(CategoryList("Apocalypse Now"),CategoryList("Saving Private Ryan")))
-        ))
+        )
+
 
         categoryListRv.setHasFixedSize(true)
         categoryListRv.layoutManager = LinearLayoutManager(this)
@@ -119,6 +121,7 @@ Lastly you'll need either an Activity or Fragment to host your adapter
 
         })
         categoryListRv.adapter = adapter
+        adapter.setExpandableParentItemList(data)
     }
 ```
 
