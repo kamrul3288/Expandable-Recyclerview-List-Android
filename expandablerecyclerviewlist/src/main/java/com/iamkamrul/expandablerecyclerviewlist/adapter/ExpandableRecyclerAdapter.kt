@@ -13,12 +13,12 @@ import com.iamkamrul.expandablerecyclerviewlist.viewholder.ParentViewHolder
 import java.lang.IllegalStateException
 
 @Suppress("UNCHECKED_CAST")
-abstract class ExpandableRecyclerAdapter<PVH : ParentViewHolder, CVH : ChildViewHolder>(parentItemList: List<ParentListItem>) :
+abstract class ExpandableRecyclerAdapter<PVH : ParentViewHolder, CVH : ChildViewHolder>:
     RecyclerView.Adapter<RecyclerView.ViewHolder>(), ParentListItemExpandCollapseListener {
 
-    private var mParentItemList: List<ParentListItem> = parentItemList
+    private var mParentItemList = mutableListOf<ParentListItem>()
     private var attachRecyclerViewListPool = mutableListOf<RecyclerView>()
-    private var itemList: MutableList<Any> = ExpandableRecyclerAdapterHelper.generateParentChildItemList(parentItemList = parentItemList) as MutableList<Any>
+    private var itemList = mutableListOf<Any>()
 
     private val typeParent = 0
     private val typeChild = 1
@@ -150,5 +150,6 @@ abstract class ExpandableRecyclerAdapter<PVH : ParentViewHolder, CVH : ChildView
     fun setExpandCollapseListener(expandCollapseListener: ExpandCollapseListener) {
         this.expandCollapseListener = expandCollapseListener
     }
+
 
 }
