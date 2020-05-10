@@ -151,5 +151,12 @@ abstract class ExpandableRecyclerAdapter<PVH : ParentViewHolder, CVH : ChildView
         this.expandCollapseListener = expandCollapseListener
     }
 
+    fun setExpandableParentItemList(parentItemList:List<ParentListItem>){
+        mParentItemList.addAll(parentItemList)
+        itemList.addAll(ExpandableRecyclerAdapterHelper.generateParentChildItemList(parentItemList = parentItemList) as MutableList<Any>)
+        notifyDataSetChanged()
+    }
+
+
 
 }
