@@ -11,15 +11,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val adapter = CategoryAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val adapter = CategoryAdapter(listOf(
+        val data = listOf(
             Category("Action", listOf(CategoryList("My Spy"),CategoryList("BloodShot"),CategoryList("Midway"))),
             Category("Drama", listOf(CategoryList("The Godfather"),CategoryList("The Dark Knight"))),
             Category("War", listOf(CategoryList("Apocalypse Now"),CategoryList("Saving Private Ryan")))
-        ))
+        )
+
 
         categoryListRv.setHasFixedSize(true)
         categoryListRv.layoutManager = LinearLayoutManager(this)
@@ -33,5 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         })
         categoryListRv.adapter = adapter
+        adapter.setExpandableParentItemList(data)
     }
 }

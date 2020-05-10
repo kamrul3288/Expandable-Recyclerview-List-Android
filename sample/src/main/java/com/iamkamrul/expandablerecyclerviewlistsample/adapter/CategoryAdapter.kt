@@ -10,7 +10,7 @@ import com.iamkamrul.expandablerecyclerviewlistsample.model.CategoryList
 import com.iamkamrul.expandablerecyclerviewlistsample.viewholder.CategoryListViewHolder
 import com.iamkamrul.expandablerecyclerviewlistsample.viewholder.CategoryViewHolder
 
-class CategoryAdapter(parentListItem: List<ParentListItem>) : ExpandableRecyclerAdapter<CategoryViewHolder, CategoryListViewHolder>(parentListItem) {
+class CategoryAdapter : ExpandableRecyclerAdapter<CategoryViewHolder, CategoryListViewHolder>(){
 
     override fun onCreateParentViewHolder(parentViewGroup: ViewGroup
     ): CategoryViewHolder {
@@ -32,5 +32,4 @@ class CategoryAdapter(parentListItem: List<ParentListItem>) : ExpandableRecycler
         val data = childListItem as CategoryList
         childViewHolder.bind(data)
     }
-
 }
