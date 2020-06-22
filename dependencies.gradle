@@ -1,5 +1,5 @@
 ext{
-    classPathVersions = '3.6.3'
+    classPathVersions = '4.0.0'
     compileSdkVersions = 29
     buildToolsVersions = '29.0.3'
     minSdkVersions = 15
