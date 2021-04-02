@@ -1,19 +1,24 @@
 ext{
-    classPathVersions = '4.0.0'
+    classPathVersions = '4.1.3'
     compileSdkVersions = 29
     buildToolsVersions = '29.0.3'
     minSdkVersions = 15
     targetSdkVersions = 29
     versionCodes = 2
     versionNames = '1.0.1'
-    kotlin_version = '1.3.72'
+    kotlin_version = '1.4.31'
+    appcompat = '1.2.0'
+    corektx = '1.3.2'
+    constraintlayout = '2.0.4'
+    recyclerview = '1.1.0'
+    cardview = '1.0.0'
 
     libraries = [
-            appCompat : 'androidx.appcompat:appcompat:1.1.0',
+            appCompat : "androidx.appcompat:appcompat:$appcompat",
             kotlinStdLib : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            ktx : 'androidx.core:core-ktx:1.2.0',
-            constraintlayout : 'androidx.constraintlayout:constraintlayout:1.1.3',
-            recyclerView :'androidx.recyclerview:recyclerview:1.1.0',
-            cardView : 'androidx.cardview:cardview:1.0.0'
+            ktx : "androidx.core:core-ktx:$corektx",
+            constraintlayout : "androidx.constraintlayout:constraintlayout:$constraintlayout",
+            recyclerView :"androidx.recyclerview:recyclerview:$recyclerview",
+            cardView : "androidx.cardview:cardview:$cardview"
     ]
 }
