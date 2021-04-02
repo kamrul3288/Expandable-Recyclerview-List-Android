@@ -17,7 +17,7 @@ Step 2. Add the dependency
 --------------------------
 ```
 dependencies {
-  implementation 'com.github.kamrul3288:Expandable-Recyclerview-List-Android:1.0.1'
+  implementation 'com.github.kamrul3288:Expandable-Recyclerview-List-Android:1.0.2'
 }
 ```
 Usage
